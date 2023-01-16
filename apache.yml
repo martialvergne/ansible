@@ -1,0 +1,31 @@
+- name: Installation d'Apache sur Web
+  hosts: web
+  become: yes
+#  vars_files:
+#    - "{{ ansible_os_family }}.yml"
+
+  tasks:
+    - name: Include OS-Specific
+      include_vars: "{{ ansible_os_family }}.yml"
+##  
+##Fichiers Debian.yml et RedHat.yml créés de côté
+## Variables apache_user et apache_pkg déclarés dedans
+
+    - name: Install Apache
+      package:
+        name: "{{ apache_pkg }}"
+        state: latest
+
+    - name: Vérification service Apache
+      service:
+        name: "{{ apache_pkg }}"
+        state: started
+
+    - name: Copie de index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/
+        mode: '0644'
+        owner: "{{ apache_user }}"
+        group: "{{ apache_user }}"
+~                                    
