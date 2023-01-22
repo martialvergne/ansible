@@ -11,3 +11,4 @@
     - name: Suppression Apache
       package:
         name: httpd
+        state: absent
