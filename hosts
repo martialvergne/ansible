@@ -1,5 +1,5 @@
 [all]
-192.168.56.31 ansible_user=ansible ansible_ssh_pass=centosan
+192.168.56.31 ansible_user=root ansible_ssh_pass=centos
 #192.168.56.32
 
 [web]
