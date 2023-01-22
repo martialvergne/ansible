@@ -11,21 +11,21 @@
 ##Fichiers Debian.yml et RedHat.yml créés de côté
 ## Variables apache_user et apache_pkg déclarés dedans
 
-    - name: Install Apache
-      package:
-        name: httpd
-        state: latest
+- name: Install Apache
+  package:
+    name: httpd
+    state: latest
 
-    - name: Vérification service Apache
-      service:
-        name: httpd
-        state: started
+- name: Vérification service Apache
+  service:
+    name: httpd
+    state: started
 
-    - name: Copie de index.html
-      copy:
-        src: index.html
-        dest: /var/www/html/
-        mode: '0644'
-        owner: "apache"
-        group: "apache"
+- name: Copie de index.html
+  copy:
+    src: index.html
+    dest: /var/www/html/
+    mode: '0644'
+    owner: "apache"
+    group: "apache"
 ~                                    
