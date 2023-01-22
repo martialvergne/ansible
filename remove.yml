@@ -5,10 +5,9 @@
 #    - "{{ ansible_os_family }}.yml"
 
   tasks:
-    - name: Include OS-Specific
-      include_vars: "{{ ansible_os_family }}.yml"
+    #- name: Include OS-Specific
+    #  include_vars: "{{ ansible_os_family }}.yml"
 
     - name: Suppression Apache
       package:
-        name: "{{ apache_pkg }}"
-        s
+        name: httpd
