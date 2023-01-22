@@ -1,3 +1,4 @@
+---
 - name: Installation d'Apache sur Web
   hosts: web
   become: yes
