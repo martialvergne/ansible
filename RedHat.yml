@@ -2,3 +2,5 @@
 apache_pkg: httpd
 apache_config_dir: /etc/httpd/conf.d
 apache_vhost_website: www.redhat.lan
+apache_user: apache
+apache_grp: apache
